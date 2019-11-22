@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RetrofitAttempt</string>
+    <string name="Sample_Text">Sample Text</string>
+    <string name="user_id">User id:</string>
+    <string name="user_name">User name:</string>
+    <string name="e_mail">E-Mail:</string>
+    <string name="city">City:</string>
+    <string name="phone_num">Phone num:</string>
+    <string name="website">website:</string>
+    <string name="company_name">Company name:</string>
+    <string name="catch_phrase">Catch phrase:</string>
+
+</resources>
