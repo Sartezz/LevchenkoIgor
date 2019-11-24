@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context="com.example.ui.mainScreen.userInfo.UserInfoActivity">
+    tools:context="com.example.ui.userInfoScreen.UserInfoActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/userPhoto"

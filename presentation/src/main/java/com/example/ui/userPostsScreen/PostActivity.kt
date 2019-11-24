@@ -1,21 +1,19 @@
-package com.example.ui.mainScreen.userPosts
+package com.example.ui.userPostsScreen
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.domain.entity.post.UserPost
 import com.example.ui.R
 import com.example.ui.base.BaseActivity
-import com.example.ui.mainScreen.userInfo.UserInfoActivity
-import com.example.ui.mainScreen.userPosts.postListAdapter.PostAdapter
+import com.example.ui.userInfoScreen.UserInfoActivity
+import com.example.ui.userPostsScreen.postListAdapter.PostAdapter
+import com.example.utils.USER_ID
 import kotlinx.android.synthetic.main.activity_main.*
 
 class PostActivity : BaseActivity<UserPostPresenter>(),
     UserPostContract.View {
-    override fun initPresenter() {
-        presenter = UserPostPresenter(this)
-    }
+
 
     private val adapter = PostAdapter()
 
@@ -29,9 +27,9 @@ class PostActivity : BaseActivity<UserPostPresenter>(),
 
         presenter.getUserPostsList()
 
-        adapter.onClick= {
-            val intent = Intent (this, UserInfoActivity::class.java)
-            intent.putExtra("USER_ID", it.userId)
+        adapter.onClick = {
+            val intent = Intent(this, UserInfoActivity::class.java)
+            intent.putExtra(USER_ID, it.userId)
             startActivity(intent)
         }
     }
@@ -41,8 +39,11 @@ class PostActivity : BaseActivity<UserPostPresenter>(),
     }
 
     override fun onGetPostsError(error: Throwable) {
-        Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
+        showToast(error.toString())
+    }
 
+    override fun initPresenter() {
+        presenter = UserPostPresenter(this)
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.ui.mainScreen.userPosts
+package com.example.ui.userPostsScreen
 
 import com.example.data.repository.PostRepositoryImpl
 import com.example.data.rest.service.Service
@@ -7,7 +7,7 @@ import com.example.ui.base.BasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class UserPostPresenter(private val activity: PostActivity) : BasePresenter(),
+class UserPostPresenter(private val mvpView: UserPostContract.View) : BasePresenter(),
     UserPostContract.Presenter {
     private var service: Service = Service()
     private var postRepository: PostRepository
@@ -23,10 +23,10 @@ class UserPostPresenter(private val activity: PostActivity) : BasePresenter(),
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     {
-                        activity.onGetPostsSuccess(it)
+                        mvpView.onGetPostsSuccess(it)
                     },
                     {
-                        activity.onGetPostsError(it)
+                        mvpView.onGetPostsError(it)
                     }
                 )
         )

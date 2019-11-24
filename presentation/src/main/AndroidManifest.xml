@@ -14,8 +14,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".mainScreen.userInfo.UserInfoActivity"></activity>
-        <activity android:name=".mainScreen.userPosts.PostActivity">
+        <activity android:name=".userInfoScreen.UserInfoActivity"></activity>
+        <activity android:name=".userPostsScreen.PostActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

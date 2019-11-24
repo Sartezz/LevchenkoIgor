@@ -1,4 +1,4 @@
-package com.example.ui.mainScreen.userPosts
+package com.example.ui.userPostsScreen
 
 import com.example.domain.entity.post.UserPost
 
@@ -11,4 +11,5 @@ interface UserPostContract {
         fun onGetPostsSuccess(userPostList: List<UserPost>)
         fun onGetPostsError(error: Throwable)
     }
+
 }

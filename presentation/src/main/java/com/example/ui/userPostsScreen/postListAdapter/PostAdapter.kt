@@ -1,4 +1,4 @@
-package com.example.ui.mainScreen.userPosts.postListAdapter
+package com.example.ui.userPostsScreen.postListAdapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,9 @@ import com.example.ui.base.BaseAdapter
 
 class PostAdapter : BaseAdapter<UserPostViewHolder, UserPost>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserPostViewHolder {
-        return UserPostViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.post_item, parent, false))
+        return UserPostViewHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.post_item, parent, false)
+        )
     }
 }

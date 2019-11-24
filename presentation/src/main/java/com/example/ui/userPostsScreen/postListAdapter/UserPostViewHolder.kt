@@ -1,4 +1,4 @@
-package com.example.ui.mainScreen.userPosts.postListAdapter
+package com.example.ui.userPostsScreen.postListAdapter
 
 import android.view.View
 import com.bumptech.glide.Glide
