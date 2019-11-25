@@ -1,20 +1,20 @@
 package com.example.ui.userInfoScreen
 
-import com.example.data.repository.UserRepositoryImpl
-import com.example.data.rest.service.Service
+import com.example.app.App
 import com.example.domain.repository.UserRepository
 import com.example.ui.base.BasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
 class UserInfoPresenter(private val mvpView: UserInfoContract.View) : BasePresenter(),
     UserInfoContract.Presenter {
 
-    private val service = Service()
-    private val userRepository: UserRepository
+    @Inject
+    lateinit var userRepository: UserRepository
 
     init {
-        userRepository = UserRepositoryImpl(service)
+        App.appComponent.inject(this)
     }
 
     override fun getUser(id: Int) {

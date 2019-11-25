@@ -41,4 +41,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
     implementation "com.squareup.retrofit2:converter-gson:2.6.2"
     implementation "com.squareup.retrofit2:adapter-rxjava2:2.6.2"
+
+    //Dagger
+    api "javax.inject:javax.inject:1"
 }

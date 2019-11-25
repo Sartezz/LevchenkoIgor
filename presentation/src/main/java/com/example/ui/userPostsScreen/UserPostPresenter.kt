@@ -1,19 +1,20 @@
 package com.example.ui.userPostsScreen
 
-import com.example.data.repository.PostRepositoryImpl
-import com.example.data.rest.service.Service
+import com.example.app.App
 import com.example.domain.repository.PostRepository
 import com.example.ui.base.BasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
 class UserPostPresenter(private val mvpView: UserPostContract.View) : BasePresenter(),
     UserPostContract.Presenter {
-    private var service: Service = Service()
-    private var postRepository: PostRepository
+
+    @Inject
+    lateinit var postRepository: PostRepository
 
     init {
-        postRepository = PostRepositoryImpl(service)
+        App.appComponent.inject(this)
     }
 
     override fun getUserPostsList() {
