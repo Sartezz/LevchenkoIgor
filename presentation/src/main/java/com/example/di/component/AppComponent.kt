@@ -2,6 +2,7 @@ package com.example.di.component
 
 import com.example.app.App
 import com.example.di.modules.app.AppModule
+import com.example.di.modules.data.DataModule
 import com.example.di.modules.data.RetrofitServiceModule
 import com.example.di.modules.repository.RepositoryModule
 import com.example.ui.userInfoScreen.UserInfoPresenter
@@ -14,7 +15,8 @@ import javax.inject.Singleton
     modules = [
         AppModule::class,
         RetrofitServiceModule::class,
-        RepositoryModule::class
+        RepositoryModule::class,
+        DataModule::class
     ]
 )
 

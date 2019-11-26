@@ -1,5 +1,7 @@
 package com.example.di.modules.repository
 
+import com.example.data.db.dao.PostDao
+import com.example.data.db.dao.UserDao
 import com.example.data.repository.PostRepositoryImpl
 import com.example.data.repository.UserRepositoryImpl
 import com.example.data.rest.service.Service
@@ -14,9 +16,11 @@ class RepositoryModule {
 
     @Singleton
     @Provides
-    fun providePostRepository(service: Service): PostRepository = PostRepositoryImpl(service)
+    fun providePostRepository(service: Service, postDao: PostDao): PostRepository =
+        PostRepositoryImpl(service, postDao)
 
     @Singleton
     @Provides
-    fun provideUserRepository(service: Service): UserRepository = UserRepositoryImpl(service)
+    fun provideUserRepository(service: Service, userDao: UserDao): UserRepository =
+        UserRepositoryImpl(service, userDao)
 }
