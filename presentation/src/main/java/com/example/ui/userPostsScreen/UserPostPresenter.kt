@@ -23,12 +23,8 @@ class UserPostPresenter(private val mvpView: UserPostContract.View) : BasePresen
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                    {
-                        mvpView.onGetPostsSuccess(it)
-                    },
-                    {
-                        mvpView.onGetPostsError(it)
-                    }
+                    { mvpView.onGetPostsSuccess(it) },
+                    { mvpView.onGetPostsError(it) }
                 )
         )
     }

@@ -9,7 +9,6 @@ import io.reactivex.Flowable
 
 @Dao
 interface PostDao {
-
     @Insert
     fun addPost(post: PostDB)
 
@@ -18,5 +17,4 @@ interface PostDao {
 
     @Query("SELECT * FROM posts")
     fun getPosts(): Flowable<List<PostDB>>
-
 }

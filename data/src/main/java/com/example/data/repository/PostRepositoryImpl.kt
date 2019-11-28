@@ -8,7 +8,7 @@ import com.example.domain.entity.post.UserPost
 import com.example.domain.repository.PostRepository
 import io.reactivex.Observable
 
-class PostRepositoryImpl (private val service: Service, private val postDao: PostDao) :
+class PostRepositoryImpl(private val service: Service, private val postDao: PostDao) :
     PostRepository {
 
     override fun getPostsList(): Observable<List<UserPost>> {
@@ -18,14 +18,11 @@ class PostRepositoryImpl (private val service: Service, private val postDao: Pos
                 if (postDB.isEmpty()) {
                     service.getPostsList()
                         .flatMap { postRest ->
-                            postRest.map { post ->
-                                postDao.addPost(post.transformToPostDb())
-                            }
+                            postRest.map { post -> postDao.addPost(post.transformToPostDb()) }
                             Observable.just(postRest)
                         }
                 } else {
-                    Observable.just(postDB.map {
-                        it.transformToUserPost() })
+                    Observable.just(postDB.map { it.transformToUserPost() })
                 }
             }
     }

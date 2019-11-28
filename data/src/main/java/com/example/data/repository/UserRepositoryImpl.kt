@@ -11,8 +11,5 @@ class UserRepositoryImpl (private val service: Service, private val userDao: Use
     override fun getUser(id: Int): Observable<User> {
         return service.getUser(id)
     }
-
-
-
 }
 

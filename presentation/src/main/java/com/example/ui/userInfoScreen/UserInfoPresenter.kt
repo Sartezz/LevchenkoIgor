@@ -23,12 +23,8 @@ class UserInfoPresenter(private val mvpView: UserInfoContract.View) : BasePresen
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                    {
-                        mvpView.getUserSuccess(it)
-                    },
-                    {
-                        mvpView.getUserError(it)
-                    }
+                    { mvpView.getUserSuccess(it) },
+                    { mvpView.getUserError(it) }
                 )
         )
     }

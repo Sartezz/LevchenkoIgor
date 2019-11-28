@@ -45,6 +45,5 @@ class PostActivity : BaseActivity<UserPostPresenter>(),
     override fun initPresenter() {
         presenter = UserPostPresenter(this)
     }
-
 }
 

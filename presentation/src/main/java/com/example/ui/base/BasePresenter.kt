@@ -17,5 +17,4 @@ abstract class BasePresenter {
     fun addDisposable(disposable:Disposable){
         disposableList.add(disposable)
     }
-
 }
