@@ -9,7 +9,6 @@ interface UserInfoContract {
 
     interface View  {
         fun getUserSuccess(user: User)
-
         fun getUserError(error: Throwable)
     }
 }

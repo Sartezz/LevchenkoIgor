@@ -8,7 +8,7 @@ data class UserDB(
     @PrimaryKey
     var id: Int,
     var name: String,
-    var userName: String,
+    var username: String,
     var email: String,
     var address: AddressDB,
     var phone: String,

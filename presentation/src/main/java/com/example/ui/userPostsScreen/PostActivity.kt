@@ -14,7 +14,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 class PostActivity : BaseActivity<UserPostPresenter>(),
     UserPostContract.View {
 
-
     private val adapter = PostAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {

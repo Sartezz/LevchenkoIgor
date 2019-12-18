@@ -8,7 +8,7 @@ import com.example.domain.entity.user.User
 fun User.transformToUserDb() = UserDB(
     id,
     name,
-    userName,
+    username,
     email,
     address.transformToAddressDB(),
     phone,
@@ -19,7 +19,7 @@ fun User.transformToUserDb() = UserDB(
 fun UserDB.transformToUser() = User(
     id,
     name,
-    userName,
+    username,
     email,
     address.transformToAddress(),
     phone,

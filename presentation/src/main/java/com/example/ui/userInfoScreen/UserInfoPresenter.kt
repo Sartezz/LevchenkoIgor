@@ -1,5 +1,6 @@
 package com.example.ui.userInfoScreen
 
+import android.util.Log
 import com.example.app.App
 import com.example.domain.repository.UserRepository
 import com.example.ui.base.BasePresenter
@@ -23,8 +24,14 @@ class UserInfoPresenter(private val mvpView: UserInfoContract.View) : BasePresen
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                    { mvpView.getUserSuccess(it) },
-                    { mvpView.getUserError(it) }
+                    {
+                        Log.d("SUCCESS", it.toString())
+                        mvpView.getUserSuccess(it)
+                    },
+                    {
+                        Log.d("ERROR", it.toString())
+                        mvpView.getUserError(it)
+                    }
                 )
         )
     }

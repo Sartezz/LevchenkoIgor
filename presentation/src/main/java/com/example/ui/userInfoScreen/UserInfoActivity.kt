@@ -29,14 +29,14 @@ class UserInfoActivity : BaseActivity<UserInfoPresenter>(), UserInfoContract.Vie
             .asBitmap()
             .load("https://s3.amazonaws.com/tinycards/image/36125d06520a2f6acdae39d1221e5ca8")
             .into(userPhoto)
-        idID.append(user.id.toString())
-        name.append(user.name)
-        email.append(user.email)
-        address.append(user.address.city)
-        phone.append(user.phone)
-        website.append(user.website)
-        company.append(user.company.name)
-        catch_phrase.append(user.company.catchPhrase)
+        idID.text = user.id.toString()
+        name.text = user.name
+        email.text=user.email
+        address.text=user.address.city
+        phone.text=user.phone
+        website.text=user.website
+        company.text=user.company.name
+        catch_phrase.text=user.company.catchPhrase
     }
 
     override fun getUserError(error: Throwable) {

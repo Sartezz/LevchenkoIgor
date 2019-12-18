@@ -12,7 +12,7 @@ import com.example.data.db.entity.user.Converter
 import com.example.data.db.entity.user.UserDB
 import com.example.utils.DATABASE_NAME
 
-@Database(entities = [PostDB::class, UserDB::class], version = 1, exportSchema = false)
+@Database(entities = [PostDB::class, UserDB::class], version = 2, exportSchema = false)
 @TypeConverters(Converter::class)
 
 abstract class AppDataBase : RoomDatabase() {
