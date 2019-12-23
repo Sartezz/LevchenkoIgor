@@ -15,12 +15,16 @@ import java.util.concurrent.TimeUnit
 class Service {
     private val userApi: UserApi
     private val postApi: PostApi
+    private val logging = HttpLoggingInterceptor()
 
     init {
+        logging.level = HttpLoggingInterceptor.Level.Body
+        
         val okHttpBuilder = OkHttpClient.Builder()
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
+            .addInterceptor(logging)
 
         val gson = GsonBuilder()
 
